@@ -34,6 +34,7 @@ def openai_call(query):
     - If question is not related to car, you must say "I don't know. I know only about cars."
     - Don't hallucinate or Don't give answers by your own. 
     - Some questions may not be related to cars. For those queries you must say "I don't know. I know only about cars."
+    - Don't give answers like I am sorry or something. Just respond with "I don't know. I know only about cars."
     - If you are giving an answer which is not related to cars you will be penalized.
     examples
     User - "What is the maximum speed of a Ferrari?"
@@ -42,7 +43,9 @@ def openai_call(query):
     Assistant - "I don't know. I know only about cars."
     User - "who is the ceo/founder of google?"
     Assistant - "I don't know. I know only about cars."
-    You must follow the above instructions and examples very strictly.
+    User - "tell me something?"
+    Assistant - "I don't know. I know only about cars."
+    Read and follow the above instructions and examples very strictly.
     """
     
     response = client.chat.completions.create(
